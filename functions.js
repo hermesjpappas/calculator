@@ -1,5 +1,6 @@
 function operate(string)
 {
+	
 	let strArray = string.split(" ");
 	let num1 = +strArray[0];
 	let num2 = +strArray[2];
