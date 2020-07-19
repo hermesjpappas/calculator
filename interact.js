@@ -23,16 +23,21 @@ buttons.forEach( button => {
 			else if(button.classList.contains("oper"))
 			{
 				if(display.textContent === "")
-					return;
+				{
+					if(text === "-")
+						display.textContent += text;
+					else
+						return;
+				}
 			
-				if(/[0-9]/g.test(display.textContent) === false)
+				if(/-?[0-9]/g.test(display.textContent) === false)
 					return;
 
 				if(solved === true)
 					solved = false;
 				//evaluate if operation needs to first calculate
 				//if we already have an operator in the string
-				if(/[\+\-\*\/]/g.test(display.textContent))
+				if(/-?[0-9]+\s[\+\-\*\/]+\s[0-9]+/g.test(display.textContent))
 				{
 					display.textContent = operate(display.textContent);
 				}
