@@ -26,6 +26,7 @@ buttons.forEach( button => {
 				{
 					if(text === "-")
 						display.textContent += text;
+						solved = false;
 					else
 						return;
 				}
@@ -37,7 +38,7 @@ buttons.forEach( button => {
 					solved = false;
 				//evaluate if operation needs to first calculate
 				//if we already have an operator in the string
-				if(/-?[0-9]+\s[\+\-\*\/]+\s[0-9]+/g.test(display.textContent))
+				if(/-?[0-9]+\s[\+\-\*\/]+\s-?[0-9]+/g.test(display.textContent))
 				{
 					display.textContent = operate(display.textContent);
 				}
