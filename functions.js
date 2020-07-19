@@ -1,7 +1,9 @@
-funtion operate(operator, a, b)
+function operate(string)
 {
-	let num1 = +a;
-	let num2 = +b;
+	let strArray = string.split(" ");
+	let num1 = +strArray[0];
+	let num2 = +strArray[2];
+	let operator = strArray[1];
 	
 	switch(operator)
 	{
