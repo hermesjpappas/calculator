@@ -1,0 +1,95 @@
+body, html {
+	display: grid;
+	height: 99%;
+	width: 99%;
+	font-size: 40px;
+	font-weight: bold;
+	font-family: "Roboto Mono", monospace;
+	background-color: #111;
+	color: lightgray;
+}
+
+#main {
+	margin: auto;
+	height: 85%;
+	width: 85%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: none;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div { 
+	border: 2px solid #333;
+	text-align: center;
+}
+
+.oper { background-color: #704614; }
+
+.num { background-color: #171717; }
+
+#display { 
+	grid-area: display; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 70px;
+}
+
+#nine { grid-area: nine; }
+#eight{ grid-area: eight; }
+#seven{ grid-area: seven; }
+#six{ grid-area: six; }
+#five{ grid-area: five; }
+#four{ grid-area: four; }
+#three{ grid-area: three; }
+#two{ grid-area: two; }
+#one{ grid-area: one; }
+#zero{ grid-area: zero; }
+
+#add{ grid-area: add; }
+#subtract{ grid-area: subtract; }
+#multiply{ grid-area: multiply; }
+#divide{ grid-area: divide; }
+
+#equals{ 
+	grid-area: equals; 
+	background-color: #ba3910;
+}
+
+#clear{ 
+	grid-area: clear; 
+	background-color: #ac2020;
+}
+
+#calctitle{ 
+	grid-area: calctitle; 
+	font-weight: thin;
+	font-style: italic;
+	color: #333;
+	background-color: #222;
+}
+
+#calcFrame {
+	height: 800px;
+	width: 700px;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 25% auto auto auto auto auto;
+	grid-template-areas:
+		"display display display display"
+		"nine eight seven add"
+		"six five four subtract"
+		"three two one multiply"
+		"zero zero clear divide"
+		"calctitle calctitle equals equals"
+}
+
+
