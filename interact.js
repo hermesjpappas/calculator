@@ -24,7 +24,10 @@ buttons.forEach( button => {
 			{
 				if(display.textContent === "")
 					return;
-				
+			
+				if(/[0-9]/g.test(display.textContent) === false)
+					return;
+
 				if(solved === true)
 					solved = false;
 				//evaluate if operation needs to first calculate
@@ -48,10 +51,18 @@ buttons.forEach( button => {
 							.slice(display.textContent.length-1, display.textContent.length)))
 				{
 					let result = operate(display.textContent);
-					result = Number((result).toFixed(3));
-					display.textContent = result;
-					solved = true;
-
+					if(result === "Don't.")
+					{
+						display.textContent = result;
+						solved = true;
+					}
+					
+					else 
+					{
+						result = Number((result).toFixed(3));
+						display.textContent = result;
+						solved = true;
+					}			
 				}
 				
 				else
