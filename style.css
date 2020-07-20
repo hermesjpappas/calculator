@@ -26,6 +26,11 @@ body, html {
 	align-items: center;
 }
 
+.button:active {
+	background-color: white;
+	color: black;
+}
+
 div { 
 	border: 2px solid #333;
 	text-align: center;
@@ -65,9 +70,18 @@ div {
 	background-color: #ba3910;
 }
 
+#equals:active{
+	background-color: white;
+	color: black;
+}
+
 #clear{ 
 	grid-area: clear; 
 	background-color: #ac2020;
+}
+
+#clear:active {
+	background-color: white;
 }
 
 #calctitle{ 

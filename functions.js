@@ -1,11 +1,10 @@
 function operate(string)
 {
-	
 	let strArray = string.split(" ");
 	let num1 = +strArray[0];
 	let num2 = +strArray[2];
 	let operator = strArray[1];
-	
+
 	switch(operator)
 	{
 		case("+"):
@@ -40,7 +39,7 @@ function multiply(a, b)
 function divide(a, b)
 {
 	if(+b === 0)
-		return "Don't.";
+		return "Don't do that.";
 	else
 		return a / b;
 }
