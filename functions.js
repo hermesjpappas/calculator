@@ -1,9 +1,17 @@
 function operate(string)
 {
+	//split the string using spaces
+	//so you can differentiate between
+	//numbers and operators (even if a number is negative)
+	
 	let strArray = string.split(" ");
+
+	//first array element is the first number,
+	//then the operator, then the second number
+	
 	let num1 = +strArray[0];
-	let num2 = +strArray[2];
 	let operator = strArray[1];
+	let num2 = +strArray[2];
 
 	switch(operator)
 	{

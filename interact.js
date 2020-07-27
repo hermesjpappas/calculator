@@ -1,9 +1,9 @@
 const buttons = document.querySelectorAll(".button");
 const display = document.querySelector("#display");
 let solved = false;
-let displ;
 
 
+//add an event listener for each button
 buttons.forEach( button => {
 
 	button.addEventListener('click', event => {
@@ -24,8 +24,10 @@ buttons.forEach( button => {
 				display.textContent = "";
 			}
 
+			//add the number to the evaluation string
 			display.textContent += text;
-		}//end if number
+
+		}//end if number button is pressed
 		
 		//if an operator button is pressed
 		else if(button.classList.contains("oper"))
@@ -34,7 +36,8 @@ buttons.forEach( button => {
 			if(solved === true && /[0-9]$/.test(display.textContent))
 				solved = false;
 	
-			//special treatment for our minus
+			//special treatment for our minus because it can be
+			//both an operator and a negative number indicator
 			if(text === "-")
 			{
 				//if there is nothing or there is a previous number
@@ -47,21 +50,17 @@ buttons.forEach( button => {
 					display.textContent += text;
 					solved = false;
 					
-					//return is so we don't add more to 
+					//return so we don't add more to 
 					//the string by mistake
+
 					return;
 				}
 			}//end if minus
 		
-	
-			//if there are no numbers or 
-			//the string doesn't end with a number, do nothing
-			if(/-?[0-9]/g.test(display.textContent) === false 
-			|| /[0-9]$/.test(display.textContent) === false)
-				return;
-
 			//evaluate if operation needs to first calculate
 			//if we already have two numbers and an operator in the string
+			//further allowing continuous evaluation
+
 			if(/-?[0-9]+\s[\+\-\*\/]+\s-?[0-9]+/g.test(display.textContent))
 			{
 				let result = operate(display.textContent);
@@ -79,9 +78,11 @@ buttons.forEach( button => {
 					solved = false;
 				}
 			}
-
+			
 			//if after all that we have a digit at the end of the string
 			//then add the operator to the overall evaluation string
+			//padded with spaces to differentiate for operate function
+			
 			if(/[0-9]$/.test(display.textContent))
 				display.textContent += " " + text + " ";
 			
@@ -94,22 +95,18 @@ buttons.forEach( button => {
 			if(/^-?[0-9]+$/.test(display.textContent) 
 			|| /^-?[0-9]+.?[0-9]*\s[\+\-\/\*]\s-?[0-9]+$/.test(display.textContent))
 				display.textContent += text;
+			
 		}//end if decimal
-
-		//do nothing if clicking on the title
-		else if(button.id === "calctitle")
-			return;
-	
+		
 		//clear everything if the clear button is pressed
 		else if(button.id === "clear")
 			display.textContent = "";
-	
-
+		
 		//if equals is pressed
 		else if(button.id === "equals")
 		{
-			//if there is a number at the end, evaluate
-			//otherwise do nothing
+			//if there is a number at the end of our string, 
+			//evaluate; otherwise do nothing
 			
 			if(/[0-9]$/.test(display.textContent))
 			{
@@ -129,9 +126,6 @@ buttons.forEach( button => {
 				}			
 			}
 			
-			else
-				return;
-		}
-
+		}//end if equals
 	});
 });
