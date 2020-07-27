@@ -102,7 +102,7 @@ buttons.forEach( button => {
 		{
 			//if the string ends in a number, negative symbol or decimal point
 			//erase that one character
-			if(/.*[0-9\-\.]$/.test(display.textContent))
+			if(/.*[0-9\-\.]$/.test(display.textContent) && display.textContent !== "Don't do that.")
 				display.textContent = display.textContent.slice(0, display.textContent.length-1);
 
 			//otherwise, if the string ends in an operator followed by a space
