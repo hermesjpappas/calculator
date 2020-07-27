@@ -65,6 +65,8 @@ div {
 #one{ grid-area: one; }
 #zero{ grid-area: zero; }
 
+#decimal {grid-area: decimal; background-color: #171717; }
+
 #add{ grid-area: add; }
 #subtract{ grid-area: subtract; }
 #multiply{ grid-area: multiply; }
@@ -112,7 +114,7 @@ div {
 		"nine eight seven add"
 		"six five four subtract"
 		"three two one multiply"
-		"zero zero clear divide"
+		"zero decimal clear divide"
 		"calctitle calctitle equals equals"
 }
 
