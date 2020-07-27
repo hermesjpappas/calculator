@@ -147,9 +147,134 @@ buttons.forEach( button => {
 //from keyboard button presses
 document.addEventListener("keyup", event => {
 
-		//code 13 is Enter
-		if (event.keyCode === 13) {
-			event.preventDefault();
-			document.getElementById("equals").click();
+		
+		switch(event.keyCode)
+		{
+			//enter triggers equals
+			case 13:
+				event.preventDefault();
+				document.getElementById("equals").click();
+				break;
+
+			//backspace triggers backspace
+			case 8:
+				event.preventDefault();
+				document.getElementById("backspace").click();
+				break;
+
+			//c or Delete triggers clear button
+			case 46:
+			case 67:
+				event.preventDefault();
+				document.getElementById("clear").click();
+				break;
+
+			//. or numpad . inserts decimal
+			case 190:
+			case 110:
+				event.preventDefault();
+				document.getElementById("decimal").click();
+				break;
+
+			// / or numpad / triggers division
+			case 191:
+			case 111:
+				event.preventDefault();
+				document.getElementById("divide").click();
+				break;
+
+			// + or numpad + triggers addition
+			case 187:
+			case 107:
+				event.preventDefault();
+				document.getElementById("add").click();
+				break;
+
+			// - or numpad - triggers subtraction
+			case 189:
+			case 109:
+				event.preventDefault();
+				document.getElementById("subtract").click();
+				break;
+
+			// * or numpad * or x triggers multiplication
+			case 56:
+			case 106:
+			case 88:
+				event.preventDefault();
+				document.getElementById("multiply").click();
+				break;
+
+			//0
+			case 48:
+			case 96:
+				event.preventDefault();
+				document.getElementById("zero").click();
+				break;
+	
+			//1
+			case 49:
+			case 97:
+				event.preventDefault();
+				document.getElementById("one").click();
+				break;
+	
+			//2
+			case 50:
+			case 98:
+				event.preventDefault();
+				document.getElementById("two").click();
+				break;
+	
+			//3
+			case 51:
+			case 99:
+				event.preventDefault();
+				document.getElementById("three").click();
+				break;
+
+			//4
+			case 52:
+			case 100:
+				event.preventDefault();
+				document.getElementById("four").click();
+				break;
+
+			//5
+			case 53:
+			case 101:
+				event.preventDefault();
+				document.getElementById("five").click();
+				break;
+
+			//6
+			case 54:
+			case 102: 
+				event.preventDefault();
+				document.getElementById("six").click();
+				break;
+
+			//7
+			case 55:
+			case 103:
+				event.preventDefault();
+				document.getElementById("seven").click();
+				break;
+
+			//8
+			case 56:
+			case 104:
+				event.preventDefault();
+				document.getElementById("eight").click();
+				break;
+
+			//9
+			case 57:
+			case 105:
+				event.preventDefault();
+				document.getElementById("nine").click();
+				break;	
 		}
-});
+	});
+
+
