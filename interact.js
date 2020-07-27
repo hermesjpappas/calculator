@@ -10,7 +10,6 @@ buttons.forEach( button => {
 
 		//strip div/button content of whitespace
 		let text = button.textContent.replace(/\s/g, "");
-
 		
 		//if a number button is pressed
 		if(button.classList.contains("num"))
@@ -25,10 +24,7 @@ buttons.forEach( button => {
 				display.textContent = "";
 			}
 
-			//add the number to the eval string if valid,
-			//i.e. ends in a number or space
-			//if(/[0-9\s]?$/.test(display.textContent))
-				display.textContent += text;
+			display.textContent += text;
 		}//end if number
 		
 		//if an operator button is pressed
@@ -82,7 +78,7 @@ buttons.forEach( button => {
 					display.textContent = result;
 					solved = false;
 				}
-			}	
+			}
 
 			//if after all that we have a digit at the end of the string
 			//then add the operator to the overall evaluation string
@@ -91,7 +87,15 @@ buttons.forEach( button => {
 			
 		}//end if operator
 		
-		
+		//if the decimal button is pressed
+		else if(button.id === "decimal")
+		{
+			//allow only one decimal per number
+			if(/^-?[0-9]+$/.test(display.textContent) 
+			|| /^-?[0-9]+.?[0-9]*\s[\+\-\/\*]\s-?[0-9]+$/.test(display.textContent))
+				display.textContent += text;
+		}//end if decimal
+
 		//do nothing if clicking on the title
 		else if(button.id === "calctitle")
 			return;
