@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <title>JS Calculator (The Odin Project)</title>
 		<link rel="stylesheet" href="style.css"></link>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,100&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 		<script src="functions.js"></script>
 </head>
 <body>
 	<div id="main">
 		<div id="calcFrame">
-			<div id="display"></div>
+			<div id="display">CALC9000+</div>
 			<div class="button num" id="nine">9</div>
 			<div class="button num" id="eight">8</div>
 			<div class="button num" id="seven">7</div>
@@ -32,6 +32,16 @@
 		</div>
 
 		<div class="button" id="backspace">⌫</div>
+	</div>
+
+
+	<div id="description">
+			<p id="title"><i><b>Welcome to CALC9000+!</b></i></p>
+			<p>Click the buttons with your mouse, or:</p>
+			<p>* or x to multiply, + to add, - to subtract or for negative numbers, / to divide.</p>
+			<p>C or Delete to clear, Backspace for correcting smaller errors.</p>
+			<p>Enter for =. Use your numpad or regular numbers/operators.</p>
+			<p>NOTE: CALC9000+ rounds results down to three decimal points for simplicity.</p>
 	</div>
 
 	<script src="interact.js"></script>

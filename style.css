@@ -9,6 +9,28 @@ body, html {
 	color: lightgray;
 }
 
+#description {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	font-size: 20px;
+	text-align: left;
+	border: none;
+	color: #444;
+	margin-top: 200px;
+	margin-left: 20px;
+	font-weight: 350;
+}
+
+#description p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+p#title {
+	font-size: 25px;
+}
+
 #main {
 	margin: auto;
 	height: 85%;
