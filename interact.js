@@ -2,7 +2,6 @@ const buttons = document.querySelectorAll(".button");
 const display = document.querySelector("#display");
 let solved = false;
 
-
 //add an event listener for each button
 buttons.forEach( button => {
 
@@ -142,4 +141,15 @@ buttons.forEach( button => {
 			
 		}//end if equals
 	});
+});
+
+//add event listener for triggering HTML "button" (div) presses
+//from keyboard button presses
+document.addEventListener("keyup", event => {
+
+		//code 13 is Enter
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			document.getElementById("equals").click();
+		}
 });
