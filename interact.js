@@ -44,7 +44,7 @@ buttons.forEach( button => {
 				//therefore allow adding "-" on numbers with no space
 
 				if(display.textContent === "" || 
-				/[0-9]+\s[\+\-\*\/]\s$/.test(display.textContent))
+				/[0-9]+\s[\+\-\×\÷]\s$/.test(display.textContent))
 				{
 					display.textContent += text;
 					solved = false;
@@ -60,7 +60,7 @@ buttons.forEach( button => {
 			//if we already have two numbers and an operator in the string
 			//further allowing continuous evaluation
 
-			if(/-?[0-9]+\s[\+\-\*\/]+\s-?[0-9]+/g.test(display.textContent))
+			if(/-?[0-9]+\s[\+\-\×\÷]+\s-?[0-9]+/g.test(display.textContent))
 			{
 				let result = operate(display.textContent);
 				
@@ -92,7 +92,7 @@ buttons.forEach( button => {
 		{
 			//allow only one decimal per number
 			if(/^-?[0-9]+$/.test(display.textContent) 
-			|| /^-?[0-9]+.?[0-9]*\s[\+\-\/\*]\s-?[0-9]+$/.test(display.textContent))
+			|| /^-?[0-9]+.?[0-9]*\s[\+\-\÷\×]\s-?[0-9]+$/.test(display.textContent))
 				display.textContent += text;
 			
 		}//end if decimal
@@ -107,7 +107,7 @@ buttons.forEach( button => {
 
 			//otherwise, if the string ends in an operator followed by a space
 			//delete the last three characters
-			else if(/.*[\+\*\-\/]\s$/.test(display.textContent))
+			else if(/.*[\+\×\-\÷]\s$/.test(display.textContent))
 				display.textContent = display.textContent.slice(0, display.textContent.length-3);
 		}
 	
