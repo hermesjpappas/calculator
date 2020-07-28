@@ -12,3 +12,7 @@ Overall, quite a fun project!
 <p>C or Delete to clear, Backspace for correcting smaller errors.</p>
 <p>Enter for =. Use your numpad or regular numbers/operators.</p>
 <p>NOTE: CALC9000+ rounds results down to three decimal points for simplicity.</p>
+
+## Issues:
+Keyboard input currently misbehaves with Firefox. This can probably be resolved by using a framework instead of the current vanilla JS.
+Probably works best for resolutions higher than 1080p.
