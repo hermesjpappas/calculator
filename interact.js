@@ -198,7 +198,6 @@ document.addEventListener("keyup", event => {
 				break;
 
 			// * or numpad * or x triggers multiplication
-			case 56:
 			case 106:
 			case 88:
 				event.preventDefault();
